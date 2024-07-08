@@ -16,6 +16,17 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def min_to_sec(min):
+    return min*60
+
+def hour_to_sec(hour):
+    return 60 * min_to_sec(hour)
+
+def day_to_sec(day):
+    return 24 * hour_to_sec(day)
+
+# print(day_to_sec(31))
+    
 # ---------------------------------
 
 
@@ -28,6 +39,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def mid(input):
+    length = len(input)
+    if length % 2 == 0:
+        print(f"length is {length}")
+    else:
+        # position = int((length-1) / 2)
+        # print(position)
+        print(input[int((length-1) / 2)])
+# mid("abcde")
 # ---------------------------------
 
 
@@ -37,9 +57,12 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def hide(input):
+    if len(input) == 16:
+        print( "**** **** **** " + input[-4:] )
 # ---------------------------------
 
-
+# hide("3726925539571037")
 
 # ### 4) Online status
 # The aim of this challenge is, given a dictionary of people's online status, to count the number of people who are online.
@@ -47,12 +70,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -63,6 +86,14 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def online_count(statuses):
+    counter = 0
+    for item in statuses:
+        if statuses[item] == "online":
+            counter+= 1
+    print(counter)
+
+# online_count(statuses)
 # ---------------------------------
 
 
@@ -73,6 +104,10 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def find_discount(price,discount):
+    print(price - (price * discount/100))
+
+# find_discount(15,35)
 # ---------------------------------
 
 
@@ -84,6 +119,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+import math
+def hypotenuse(opp, adj):
+    print(math.sqrt(opp*opp + adj*adj))
+
+# hypotenuse(5,12)
 # ---------------------------------
 
 
@@ -97,4 +137,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def fibonacci(a,b):
+    prev1 = a
+    prev2 = b
+    # next = prev1 + prev2
+    for item in range(0,8):
+        next = prev1 + prev2
+        prev1 = prev2
+        prev2 = next
+        print(f"{next}")
+
+fibonacci(0,1)
 # ---------------------------------
